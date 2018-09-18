@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .center {
+            padding-top: 10%;
+        }
+    </style>
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function(){
+
+            $("#register").click(function(){
+                window.location.href = 'registerPage';
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container center">
+        <div class="text-center">
+            <h3>登陆</h3>
+            <h5 th:text="${message}" class="text-warning"></h5>
+        </div>
+        <form class="form-horizontal offset-4" role="form" action="/login" method="post">
+            <div class="form-group">
+                <label for="userName" class="col-6 control-label">用户名</label>
+                <div class="col-6">
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="请输入用户名">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userPassword" class="col-6 control-label">密码</label>
+                <div class="col-6">
+                    <input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="请输入密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-info btn-block">登录</button>
+                </div>
+            </div>
+
+        </form>
+        <div class="offset-4 col-4">
+            <button id="register" class="btn btn-info btn-block">注册</button>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

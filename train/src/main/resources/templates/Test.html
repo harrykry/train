@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function(){
+
+            $("#login").click(function(){
+                window.location.href = 'loginPage';
+            });
+
+        });
+    </script>
+</head>
+
+<style>
+    .center {
+        padding-top: 10%;
+    }
+</style>
+
+<body>
+<div >
+    <div >
+        <h3>注册</h3>
+        <h4 th:text="${message}" class="text-warning"></h4>
+    </div>
+    <form role="form" action="#" method="post">
+
+                <input type="text"  id="userName" name="userName" placeholder="请输入用户名" th:value="${name}">
+
+                <!--<input type="password" class="form-control" id="userPassword" name="userPassword" placeholder="请输入密码" th:field="${userPassword}">-->
+
+                <!--<input type="password" class="form-control" id="userPassword1" name="userPassword" placeholder="请输入密码" th:field="${userPassword}">-->
+
+                <!--<input type="email" class="form-control" id="userEmail" name="userEmail" placeholder="请输入邮箱" th:field="${userEmail}">-->
+
+                <button type="submit" class="btn btn-info btn-block">注册</button>
+
+    </form>
+        <button id="login" class="btn btn-info btn-block">前往登陆</button>
+
+
+</div>
+</body>
+</html>

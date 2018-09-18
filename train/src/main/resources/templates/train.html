@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function(){
+
+            $("#login").click(function(){
+                window.location.href = 'loginPage';
+            });
+
+        });
+    </script>
+</head>
+
+<style>
+    .center {
+        padding-top: 10%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center col-12">查询</h2>
+            <form class="form-inline col-12" role="form" action="/selectTrain" method="post" >
+                <div class="form-group col-5">
+                    <label for="locationStart" class="col-2 control-label">出发</label>
+                    <div>
+                        <input type="text" class="form-control" id="locationStart" name="locationStart" placeholder="请输入起始点" th:value="${userInfo?.UserName}">
+                    </div>
+                </div>
+                <div class="form-group col-5">
+                    <label for="locationFinal" class="col-2 control-label">到达</label>
+                    <div>
+                        <input type="text" class="form-control col-12" id="locationFinal" name="locationFinal" placeholder="请输入目的地" th:value="${userInfo?.userPassword}">
+                    </div>
+                </div>
+                <div class="form-group col-2">
+                    <div>
+                        <button type="submit" class="btn btn-info btn-block">查询</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
